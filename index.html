@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Generate Strong Passwords</h1>
+    <div class="container">
+
+        <div class="row1">
+            <div id="passarea">
+                <!-- Password will Appear Here -->
+            </div>
+            <div class="icon">
+                <i class="fa fa-arrows-rotate" style="font-size:40px;"></i>
+            </div>
+            <div class="icon">
+                <i class="fa fa-thin fa-copy" style="font-size:40px;"></i>
+            </div>
+        </div>
+        <div class="row1-ext">
+            Strong Password <br>
+        </div>
+        <div class="row2">
+            <div class="passlen-wrapper">
+                <div id="password-len-text">
+                    Password Length
+                </div>
+                <div id="pass-len">
+                    14
+                </div>
+            </div>
+            <br>
+            <input type="range" min="1" max="64" value="14" id="custom-slider">
+        </div>
+        <div class="row3">
+
+            <div class="row3-1">
+                <input type="checkbox" id="Uppercase" checked>
+                <label for="Uppercase">Uppercase</label>
+            </div>
+
+            <div class="row3-2">
+                <input type="checkbox" id="Lowercase" checked>
+                <label for="Lowercase">Lowercase</label>
+            </div>
+            
+            <div class="row3-3">
+                <input type="checkbox" id="Numbers" checked>
+                <label for="Numbers">Numbers</label>
+            </div>
+            <div class="row3-4">
+                <input type="checkbox" id="Symbols" checked>
+                <label for="Symbols">Symbols</label>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
