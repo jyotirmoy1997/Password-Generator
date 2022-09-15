@@ -75,7 +75,6 @@ const passString = () => {
     
 }
 
-
 const generate = (len) => {
     let pass = passString();
     let password = "";
@@ -86,28 +85,12 @@ const generate = (len) => {
     return password;
 }
 
-
-
-
-
-// Initial Password
-let passarea = document.getElementById("passarea");
-let value = 14;
-passarea.innerText = generate(value);
-
-
-
-
-// Password Will Change With Slider
-let slider = document.getElementById("custom-slider").addEventListener("input", function(event) {
-    value = event.target.value;
-
+const changePassareaColor = (value) => {
     if(value < 12 && value >= 8)
     {
         document.getElementById("strength").src = "./Images/danger.png"
         document.getElementById("pass-type").innerHTML = "Weak Password"
         passarea.style.backgroundColor = '#F26E00';
-        // #BB0404
     }
     else if(value < 8)
     {
@@ -120,14 +103,58 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
         document.getElementById("pass-type").innerHTML = "Strong Password"
         passarea.style.backgroundColor = '#0D830D';
     }
+}
 
+const fixFontSize = (val) => {
+    if(window.innerWidth > 600)
+    {
+        passarea.style.fontSize = "1em";
+    }
+    if(window.innerWidth < 460 && val <= 28)
+    {
+        passarea.style.fontSize = "1em";
+    }
+    else if(window.innerWidth < 460 && val > 28 && val <= 40)
+    {
+        passarea.style.fontSize = "0.75em";
+    }
+    else if(window.innerWidth < 460 && val > 40)
+    {
+        passarea.style.fontSize = "0.6em";
+    }
+    else if(window.innerWidth > 460 && window.innerWidth < 655 && val <= 28)
+    {
+        passarea.style.fontSize = "1em";
+    }
+    else if(window.innerWidth > 460 && window.innerWidth < 655 && val > 32 && val <= 40)
+    {
+        passarea.style.fontSize = "0.75em";
+    }
+    else if(window.innerWidth > 460 && window.innerWidth < 655 && val > 40)
+    {
+        passarea.style.fontSize = "0.65em";
+    }
+}
+
+// Initial Password
+let passarea = document.getElementById("passarea");
+let value = 14;
+passarea.innerText = generate(value);
+
+// Font Size Changes whenever window resizes
+window.addEventListener("resize", () => {
+    let new_val = value
+    fixFontSize(new_val)  
+})
+    
+
+// Password Will Change With Slider
+let slider = document.getElementById("custom-slider").addEventListener("input", function(event) {
+    value = event.target.value;
+    changePassareaColor(value);
     document.getElementById("pass-len").innerHTML = value;
     passarea.innerText = generate(value);
-    if(window.innerWidth < 460 && value > 32)
-    {
-        // alert('Reach')
-        passarea.style.fontSize = '0.6em'
-    }
+    fixFontSize(value);
 })
 
 
@@ -143,13 +170,12 @@ let copy = document.getElementsByClassName("fa-copy")[0]
 copy.addEventListener("click", () => {
     let password = passarea.innerHTML
     navigator.clipboard.writeText(password);
-
-
+    // password.setSelectionRange(0, 99999);
     let tooltext = document.getElementsByClassName('icon-copy')[0]
     tooltext.setAttribute('data', 'Copied!')
     tooltext.style.setProperty('--width', '45px')
     setTimeout(() => {
         tooltext.setAttribute('data', 'Copy Password')
         tooltext.style.setProperty('--width', '90px')
-    }, 3000)
+    }, 1000)
 })

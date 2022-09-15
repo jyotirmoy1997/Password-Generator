@@ -10,9 +10,7 @@ h1{
     font-weight: lighter;
     font-family: 'Oswald', sans-serif;
 }
-/* .container{
-    background-color: rgba(255, 255, 255, 0.7) 
-} */
+
 
 .row1{
     background-color: rgba(255, 255, 255, 0.8);
@@ -35,7 +33,6 @@ h1{
     padding: 0.5em 1.5em;;
     justify-content:flex-start;
     vertical-align: middle;
-    /* text-align: center; */
 }
 
 #pass-type{
@@ -55,7 +52,6 @@ h1{
     background-color: rgba(255, 255, 255, 0.8);
     width: 90%;
     display: flex;
-    /* justify-content: space-between; */
     max-width: 750px;
     margin: 0 auto;
     padding: 1.5em 1.5em;
@@ -65,7 +61,6 @@ h1{
 }
 
 .icon{
-    /* border: 1px solid black; */
     margin: 0 0.75em;
 }
 
@@ -79,14 +74,6 @@ h1{
     font-family: 'Play', sans-serif;
     overflow-x: auto;
 } 
-
-/* #custom-slider{
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    background: black;
-    height: 5px;
-} */
 
 .fa{
     cursor: pointer;
@@ -114,24 +101,24 @@ h1{
     width: 200px;
     height: 30px;
     display: flex;
-    justify-content: space-between;
-    /* border: 2px solid black; */
+    justify-content:flex-start;
 }
 
 #password-len-text{
     width: 70%;
     font-size: 1.1em;
-    /* border: 2px solid black; */
-    /* width: 150px; */
+    line-height: 27px;
 }
 #pass-len{
     width: 20%;
-    border: 2px solid black;
+    border: 2px solid #0A2E81;
     text-align: center;
+    line-height: 25px;
+    color: white;
+    background-color: #0A2E81;
 }
 
 .row3-1, .row3-2, .row3-3, .row3-4{
-    /* border: 1px solid black; */
     width: 30%;
 }
 
@@ -157,7 +144,6 @@ h1{
     content: attr(data);
     font-family: sans-serif;
     width: var(--width, 90px);
-    /* text-align: center; */
     font-size: 0.8em;
     position: absolute;
     bottom: 80%;
@@ -171,4 +157,15 @@ h1{
 
 .icon-copy:hover::before{
     visibility: visible;
+}
+
+footer{
+    width: 90%;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 0.75em;
+    font-family: 'Ubuntu Mono', monospace;;
+    padding: 0.75em 0.75em;
+    color: white;
 }
