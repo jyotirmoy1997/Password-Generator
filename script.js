@@ -1,4 +1,83 @@
-const generate = (pass, len) => {
+const passString = () => {
+    // Checkbox
+    let up = document.getElementById("Uppercase");
+    let lo = document.getElementById("Lowercase");
+    let num = document.getElementById("Numbers");
+    let sym = document.getElementById("Symbols");
+
+    const upper_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lower_set = "abcdefghijklmnopqrstuvwxyz";
+    const number_set = "0123456789";
+    const symbol_set = "!@#$%^&*()_+/.{}[]?<>|";
+
+    let pass = upper_set + lower_set + number_set + symbol_set;
+    if(!up.checked && !lo.checked && !num.checked && !sym.checked)
+    { 
+        alert("Please select atleast one")
+        up.checked = true;
+        lo.checked = true;
+        num.checked = true;
+        sym.checked = true;
+    }
+    else if(!up.checked && !lo.checked && num.checked && sym.checked)
+    {
+        // alert("Reach 1")
+        pass = number_set + symbol_set;
+    }
+    else if(!up.checked && !num.checked && sym.checked && lo.checked)
+    {
+        // alert("Reach 2")
+        pass = lower_set + symbol_set;
+    }
+    else if(!lo.checked && !num.checked && up.checked && sym.checked)
+    {
+        // alert("Reach 3")
+        pass = upper_set + symbol_set;
+    }
+    else if(!num.checked && !sym.checked)
+    {
+       alert("Weak Password Combination...Consider adding Numbers and Symbols")
+    }
+    else if(!num.checked && !sym.checked && !up.checked)
+    {
+       alert("Weak Password Combination...Consider adding Uppercase characters, Numbers and Symbols")
+    }
+    else if(!num.checked && !sym.checked && !lo.checked)
+    {
+       alert("Weak Password Combination...Consider adding Lowercase characters, Numbers and Symbols")
+    }
+    else if(!up.checked && !lo.checked && !num.checked)
+    {
+       alert("Weak Password Combination...Consider adding Lowercase characters, Uppercase characters, and Numbers")
+    }
+    else if(!up.checked && !lo.checked && !sym.checked)
+    {
+       alert("Weak Password Combination...Consider adding Lowercase characters, Uppercase characters, and Symbols")
+    }
+    else if(!up.checked)
+    {
+        pass = lower_set + number_set + symbol_set;
+    }
+    else if(!lo.checked)
+    {
+        pass = upper_set + number_set + symbol_set;
+    }
+    else if(!num.checked)
+    {
+        pass = upper_set + lower_set + symbol_set;
+    }
+    else if(!sym.checked)
+    {
+        pass = upper_set + lower_set + number_set;
+    }
+    // console.log(pass)
+    return pass
+    
+}
+
+
+const generate = (len) => {
+    let pass = passString();
     let password = "";
     for(let i=0; i<len; i++)
     {
@@ -7,22 +86,16 @@ const generate = (pass, len) => {
     return password;
 }
 
-const upper_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lower_set = "abcdefghijklmnopqrstuvwxyz";
-const number_set = "0123456789";
-const symbol_set = "!@#$%^&*()_+/.{}[]?<>|";
+
+
+
 
 // Initial Password
-let pass = upper_set + lower_set + number_set + symbol_set;
 let passarea = document.getElementById("passarea");
 let value = 14;
-passarea.innerText = generate(pass, value);
+passarea.innerText = generate(value);
 
-// Checkbox
-let cb1 = document.getElementById("Uppercase");
-let cb2 = document.getElementById("Lowercase");
-let cb3 = document.getElementById("Numbers");
-let cb4 = document.getElementById("Symbols");
+
 
 
 // Password Will Change With Slider
@@ -48,30 +121,8 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
         passarea.style.backgroundColor = '#0D830D';
     }
 
-    pass = upper_set + lower_set + number_set + symbol_set;
-    if(!cb1.checked)
-    {
-        pass = lower_set + number_set + symbol_set;
-    }
-    if(!cb2.checked)
-    {
-        pass = upper_set + number_set + symbol_set;
-    }
-    if(!cb3.checked)
-    {
-        pass = upper_set + lower_set + symbol_set;
-    }
-    if(!cb4.checked)
-    {
-        pass = upper_set + lower_set + number_set;
-    }
-    console.log("cb1", cb1.checked);
-    console.log("cb2", cb2.checked);
-    console.log("cb3", cb3.checked);
-    console.log("cb4", cb4.checked);
-
     document.getElementById("pass-len").innerHTML = value;
-    passarea.innerText = generate(pass, value);
+    passarea.innerText = generate(value);
     if(window.innerWidth < 460 && value > 32)
     {
         // alert('Reach')
@@ -83,7 +134,7 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
 // Password will change with Refresh Icon
 let refresh = document.getElementsByClassName("fa-arrows-rotate")[0]
 refresh.addEventListener("click", () => {
-    passarea.innerText = generate(pass, value);
+    passarea.innerText = generate(value);
 })
 
 
