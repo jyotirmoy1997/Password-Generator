@@ -19,56 +19,58 @@
 <body>
     <h1>Generate Strong Passwords</h1>
     <div class="container">
-
-        <div class="row1">
-            <div id="passarea">
-                <!-- Password will Appear Here -->
-            </div>
-            <div class="icon icon-arrow">
-                <i class="fa fa-arrows-rotate" style="font-size:40px;"></i>
-            </div>
-            <div class="icon icon-copy" data="Copy Password">
-                <i class="fa fa-thin fa-copy" style="font-size:40px;"></i>
-            </div>
-        </div>
-        <div class="row1-ext">
-            <img id="strength" src="./Images/verified.png" alt="" srcset="" width="20px" height="20px">
-            <label for="" id="pass-type">Strong Password</label>
-             <br>
-        </div>
-        <div class="row2">
-            <div class="passlen-wrapper">
-                <div id="password-len-text">
-                    Password Length
+        <div class="wrapper">
+            <div class="row1">
+                <div id="passarea">
+                    <!-- Password will Appear Here -->
                 </div>
-                <div id="pass-len">
-                    14
+                <div class="icon icon-arrow">
+                    <i class="fa fa-arrows-rotate" style="font-size:40px;"></i>
+                </div>
+                <div class="icon icon-copy" data="Copy Password">
+                    <i class="fa fa-thin fa-copy" style="font-size:40px;"></i>
                 </div>
             </div>
-            <br>
-            <input type="range" min="1" max="48" value="14" id="custom-slider">
+            <div class="row1-ext">
+                <img id="strength" src="./Images/verified.png" alt="" srcset="" width="20px" height="20px">
+                <label for="" id="pass-type">Strong Password</label>
+                 <br>
+            </div>
+            <div class="row2">
+                <div class="passlen-wrapper">
+                    <div id="password-len-text">
+                        Password Length
+                    </div>
+                    <div id="pass-len">
+                        14
+                    </div>
+                </div>
+                <br>
+                <input type="range" min="1" max="48" value="14" id="custom-slider">
+            </div>
+            <div class="row3">
+    
+                <div class="row3-1">
+                    <input type="checkbox" id="Uppercase" checked>
+                    <label for="Uppercase">Uppercase</label>
+                </div>
+    
+                <div class="row3-2">
+                    <input type="checkbox" id="Lowercase" checked>
+                    <label for="Lowercase">Lowercase</label>
+                </div>
+                
+                <div class="row3-3">
+                    <input type="checkbox" id="Numbers" checked>
+                    <label for="Numbers">Numbers</label>
+                </div>
+                <div class="row3-4">
+                    <input type="checkbox" id="Symbols" checked>
+                    <label for="Symbols">Symbols</label>
+                </div>
+            </div>
         </div>
-        <div class="row3">
-
-            <div class="row3-1">
-                <input type="checkbox" id="Uppercase" checked>
-                <label for="Uppercase">Uppercase</label>
-            </div>
-
-            <div class="row3-2">
-                <input type="checkbox" id="Lowercase" checked>
-                <label for="Lowercase">Lowercase</label>
-            </div>
-            
-            <div class="row3-3">
-                <input type="checkbox" id="Numbers" checked>
-                <label for="Numbers">Numbers</label>
-            </div>
-            <div class="row3-4">
-                <input type="checkbox" id="Symbols" checked>
-                <label for="Symbols">Symbols</label>
-            </div>
-        </div>
+        
         <footer>Developed by Jyotirmoy Das
             <a href="https://github.com/jyotirmoy1997" target="_blank">
                 <img src="./Logos/GitHub.png" alt="" srcset="" height="17px" width="17px">
