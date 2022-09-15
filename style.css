@@ -135,7 +135,7 @@ h1{
     color: azure;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0.75em 0.75em;
-    border-radius: 10%;
+    border-radius: 1em;
     transform: translateX(-25%);
     visibility: hidden;
 }
@@ -145,9 +145,9 @@ h1{
 }
 
 .icon-copy::before{
-    content: "Copy Password";
+    content: attr(data);
     font-family: sans-serif;
-    width: 90px;
+    width: var(--width, 90px);
     /* text-align: center; */
     font-size: 0.8em;
     position: absolute;
@@ -155,8 +155,8 @@ h1{
     color: azure;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0.75em 0.75em;
-    border-radius: 10%;
-    transform: translateX(-25%);
+    border-radius: 1em;
+    transform: translateX(-30%);
     visibility: hidden;
 }
 

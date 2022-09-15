@@ -18,7 +18,7 @@ let passarea = document.getElementById("passarea");
 let value = 14;
 passarea.innerText = generate(pass, value);
 
-
+// Checkbox
 let cb1 = document.getElementById("Uppercase");
 let cb2 = document.getElementById("Lowercase");
 let cb3 = document.getElementById("Numbers");
@@ -52,12 +52,33 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
 
     document.getElementById("pass-len").innerHTML = value;
     passarea.innerText = generate(pass, value);
+    if(window.innerWidth < 460 && value > 32)
+    {
+        // alert('Reach')
+        passarea.style.fontSize = '0.6em'
+    }
 })
 
 
 // Password will change with Refresh Icon
-let copy = document.getElementsByClassName("fa-arrows-rotate")[0]
-copy.addEventListener("click", () => {
+let refresh = document.getElementsByClassName("fa-arrows-rotate")[0]
+refresh.addEventListener("click", () => {
     passarea.innerText = generate(pass, value);
 })
 
+
+// Getting Password From Clipboard
+let copy = document.getElementsByClassName("fa-copy")[0]
+copy.addEventListener("click", () => {
+    let password = passarea.innerHTML
+    navigator.clipboard.writeText(password);
+
+
+    let tooltext = document.getElementsByClassName('icon-copy')[0]
+    tooltext.setAttribute('data', 'Copied!')
+    tooltext.style.setProperty('--width', '45px')
+    setTimeout(() => {
+        tooltext.setAttribute('data', 'Copy Password')
+        tooltext.style.setProperty('--width', '90px')
+    }, 3000)
+})
