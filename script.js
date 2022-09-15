@@ -28,6 +28,26 @@ let cb4 = document.getElementById("Symbols");
 // Password Will Change With Slider
 let slider = document.getElementById("custom-slider").addEventListener("input", function(event) {
     value = event.target.value;
+
+    if(value < 12 && value >= 8)
+    {
+        document.getElementById("strength").src = "./Images/danger.png"
+        document.getElementById("pass-type").innerHTML = "Weak Password"
+        passarea.style.backgroundColor = '#F26E00';
+        // #BB0404
+    }
+    else if(value < 8)
+    {
+        document.getElementById("pass-type").innerHTML = "Very Weak Password"
+        passarea.style.backgroundColor = '#BB0404';
+    }
+    else
+    {
+        document.getElementById("strength").src = "./Images/verified.png"
+        document.getElementById("pass-type").innerHTML = "Strong Password"
+        passarea.style.backgroundColor = '#0D830D';
+    }
+
     pass = upper_set + lower_set + number_set + symbol_set;
     if(!cb1.checked)
     {

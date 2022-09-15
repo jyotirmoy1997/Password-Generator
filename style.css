@@ -27,12 +27,19 @@ h1{
 
 .row1-ext{
     background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Cabin', sans-serif;    
     display: flex;
     width: 90%;
     max-width: 750px;
     margin: 0 auto;
     padding: 0.5em 1.5em;;
-    justify-content: space-between;
+    justify-content:flex-start;
+    vertical-align: middle;
+    /* text-align: center; */
+}
+
+#pass-type{
+    margin-left: 5px;
 }
 
 .row2{
@@ -41,7 +48,7 @@ h1{
     max-width: 750px;
     margin: 0 auto;
     padding: 1.5em 1.5em;;
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Cabin', sans-serif;
 }
 
 .row3{
@@ -65,6 +72,8 @@ h1{
 #passarea{
     border: 1px solid black;
     width: 80%;
+    background-color: #0D830D;
+    color: white;
     text-align: center;
     line-height: 40px;
     font-family: 'Play', sans-serif;
