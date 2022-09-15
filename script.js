@@ -166,7 +166,7 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
 let refresh = document.getElementsByClassName("fa-arrows-rotate")[0]
 refresh.addEventListener("click", () => {
     passarea.innerText = generate(value);
-    // alert(window.innerWidth)
+    alert(window.innerWidth)
 })
 
 
