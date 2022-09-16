@@ -114,15 +114,15 @@ const fixFontSize = (val) => {
     {
         passarea.style.fontSize = "1em";
     }
-    else if(window.innerWidth < 460 && val > 24 && val <= 32)
+    else if(window.innerWidth < 460 && val > 24 && val <= 28)
     {
         passarea.style.fontSize = "0.75em";
     }
-    else if(window.innerWidth < 460 && val > 32 && val <= 40)
+    else if(window.innerWidth < 460 && val > 28 && val <= 36)
     {
         passarea.style.fontSize = "0.6em";
     }
-    else if(window.innerWidth < 460 && val > 40)
+    else if(window.innerWidth < 460 && val > 36)
     {
         passarea.style.fontSize = "0.5em";
     }
@@ -166,7 +166,7 @@ let slider = document.getElementById("custom-slider").addEventListener("input", 
 let refresh = document.getElementsByClassName("fa-arrows-rotate")[0]
 refresh.addEventListener("click", () => {
     passarea.innerText = generate(value);
-    alert(window.innerWidth)
+    // alert(window.innerWidth)
 })
 
 
